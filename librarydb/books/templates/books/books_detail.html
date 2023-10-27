@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Details</h2>
+    <p>Author: {{books.autor }}</p>
+    <p>Title: {{books.titel }}</p>
+    <p>Year: {{books.erscheinungsjahr}}</p>
+    <p>Publisher: {{books.verlag}}</p>
+    <a class="btn btn-secondary btn-sm" href="{% url 'book_start' %}">Back</a>
+    <a class="btn btn-danger btn-sm" href="{% url 'book_delete' books.pk %}">Delete</a>
+    <a class="btn btn-success btn-sm" href="{% url 'book_update' books.pk %}">Update</a>
+{% endblock content %}

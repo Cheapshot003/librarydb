@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>All Books</h2>
+<ul>
+    {% for buch in object_list %}
+    <h5><li><a href="{% url 'book_detail' buch.pk %}">{{ buch.autor }}: {{ buch.titel }}</h5></a></li>
+    {% endfor %}
+</ul>
+<a class="btn btn-success btn-sm" href="{% url 'neues_buch' %}">+ Add New Book</a>
+{% endblock content %}
